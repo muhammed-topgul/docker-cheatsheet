@@ -44,6 +44,24 @@
                         <image>mtopgul/app1</image>
                     </to>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>create-docker-image</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>dockerBuild</goal>
+                        </goals>
+                        <configuration>
+                            <container>
+                                <mainClass>com.mtopgul.Main</mainClass>
+                                <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                                <labels>
+                                    <mvn.build.version>${project.version}</mvn.build.version>
+                                </labels>
+                            </container>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
