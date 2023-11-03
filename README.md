@@ -32,4 +32,9 @@
 >>  - `docker volume inspect <VOLUME_NAME>` _Volume detaylarını gösteririr._<br/>
 >>  - `docker run -v <VOLUME_NAME>:/<NEW_FILE> -p 8085:8085 --name web_app mtopgul/web-app1` _Image oluşturur ve volume ile bağlar._<br/>
 >>  - `docker run -v <VOLUME_NAME>:/<NEW_FILE>:ro -p 8085:8085 --name web_app mtopgul/web-app1` _Image oluşturur ve volume ile bağlar. Burda volume sadece READ ONLY'dir yazma işlemi yapılamaz._<br/>
+
+> >>- **Bind Mounts**<br/>
+>>  - `docker container run -d -p 80:80 -v C:\docker-staff\container101\website:/usr/share/nginx/html --name my_web nginx` _Bind Mounts._<br/>
+>>     _Bilgisayarım üzerinde bulunan bir dizini doğrudan docker üzerinde gösterebiliyorum. 
+        Docker doğrudan bu dosyayı okur. Bilgisayar üzerinde yapılan değişiklikler docker'ı da etkiler._
 </details>
