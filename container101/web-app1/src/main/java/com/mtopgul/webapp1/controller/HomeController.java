@@ -1,11 +1,13 @@
 package com.mtopgul.webapp1.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -25,10 +27,22 @@ public class HomeController {
     @Value("${file.path}")
     private String filePath;
 
+    @Value("${webapp2.url}")
+    private String webapp2Url;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     @GetMapping
     public String homePage() {
-        log.info("Getting home page {}", LocalDateTime.now());
+        log.info("[WEB-APP1]> Getting home page {}", LocalDateTime.now());
         return "Welcome to Home Page";
+    }
+
+    @GetMapping("/app2")
+    public String app2() {
+        log.info("WEP-APP2 url {}", webapp2Url);
+        return restTemplate.getForEntity(webapp2Url, String.class).getBody();
     }
 
     @GetMapping("/write/{text}/{fileName}")

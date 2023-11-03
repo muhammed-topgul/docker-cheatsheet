@@ -35,6 +35,21 @@
 
 > >>- **Bind Mounts**<br/>
 >>  - `docker container run -d -p 80:80 -v C:\docker-staff\container101\website:/usr/share/nginx/html --name my_web nginx` _Bind Mounts._<br/>
->>     _Bilgisayarım üzerinde bulunan bir dizini doğrudan docker üzerinde gösterebiliyorum. 
+>>     _<br/>Bilgisayarım üzerinde bulunan bir dizini doğrudan docker üzerinde gösterebiliyorum. 
         Docker doğrudan bu dosyayı okur. Bilgisayar üzerinde yapılan değişiklikler docker'ı da etkiler._
+</details>
+
+<details>
+  <summary>Container 102</summary>
+
+> >>- **Network**<br/>
+>>  - `CTRL + PQ` _Container ile konsol bağlantısını keser ama containeri kapatmaz._<br/>
+>>  - `dokcer network ls` _Networkleri listeler._<br/>
+>>  - `dokcer network inspect <NETWORK_NAME>` _Network detaylarını gösterir._<br/>
+>>  - `docker container run -d -p 8080:8080 --net host --name <CONTAINER_NAME> <IMAGE_NAME>` _Conteineri host networküne bağlar._<br/>
+>>  - `docker network create <NETWORK_NAME> --driver bridge` _Yeni bir network oluşturur._<br/>
+>>  - `docker network create <NETWORK_NAME> --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10` _Özelleştirilmiş bağlantı ayarlı bir network oluşturur._<br/>
+>>  - `docker network connect <NETWORK_NAME> <CONTAINER_ID>` _Containeri yeni bir networke bağlar._<br/>
+>>  - `docker network disconnect <NETWORK_NAME> <CONTAINER_ID>` _Containeri networkten çıkarır._<br/>
+>>  - `docker network rm <NETWORK_NAME>` _Networkü siler._<br/>
 </details>
