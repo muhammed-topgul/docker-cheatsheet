@@ -66,4 +66,10 @@
 >>  - `docker stats` _Tüm containerın hafıza kullanım bilgilerini gösterir._<br/>
 >>  - `docker stats <CONTAINER_ID>` _Containerların hafıza kullanım bilgilerini gösterir._<br/>
 
+> >>- **CPU and Memory Limits**<br/>
+>>  - `docker container run -d -p 8080:8080 --name w001 --memory=100m <IMAGE_NAME>` _Containera maximum memory limiti atar._<br/>
+>>  - `docker container run -d -p 8080:8080 --name w001 --memory=100m --memory-swap=200m <IMAGE_NAME>` _Containera maximum 
+      memory limiti ve swap alanı atar. Böylece eğer containerin memorysi dolsa bile çökmez, swap alanını kullanabilir._<br/>
+>>  - `docker container run -d -p 8080:8080 --name w01 --cpus="1.5" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden sadece 1.5 tanesini kullanabileceğini belirtir._<br/>
+>>  - `docker container run -d -p 8080:8080 --name w01 --cpuset-cpus="0,3" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden 0. ve 3. numaralı çekirdekleri kullanabileceğini belirtir._<br/>
 </details>
