@@ -60,4 +60,10 @@
 >>  - `docker logs <CONTAINER_ID> --until 5m` _Container loglarını (Son 5 dk hariç) gösterir._<br/>
 >>  - `docker logs <CONTAINER_ID> -t` _Container loglarını başında oluşturulduğu tarih ile birlikte gösterir._<br/>
 >>  - `docker logs <CONTAINER_ID> --tail 2` _Son 2 satır container logunu gösterir._<br/>
+
+> >>- **Stats and Top**<br/>
+>>  - `docker top <CONTAINER_ID>` _Container PID, TIME, CMD gibi verilerini gösterir._<br/>
+>>  - `docker stats` _Tüm containerın hafıza kullanım bilgilerini gösterir._<br/>
+>>  - `docker stats <CONTAINER_ID>` _Containerların hafıza kullanım bilgilerini gösterir._<br/>
+
 </details>
