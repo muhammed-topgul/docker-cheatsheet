@@ -72,4 +72,15 @@
       memory limiti ve swap alanı atar. Böylece eğer containerin memorysi dolsa bile çökmez, swap alanını kullanabilir._<br/>
 >>  - `docker container run -d -p 8080:8080 --name w01 --cpus="1.5" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden sadece 1.5 tanesini kullanabileceğini belirtir._<br/>
 >>  - `docker container run -d -p 8080:8080 --name w01 --cpuset-cpus="0,3" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden 0. ve 3. numaralı çekirdekleri kullanabileceğini belirtir._<br/>
+
+> >>- **Environment Variables**<br/>
+>>  - `Get-ChildItem Env:` _Windows'ta tüm ortam değişkenlerini gösterir._<br/>
+>>  - `$Env:JAVA_HOME` _Windows'ta isme göre ortam değişkenlenini gösterir._<br/>
+>>  - `$Env:test="JAVA DEV"` _Windows'ta yeni bir ortam değişkenlenini oluşturur._<br/>
+>>  - `printenv` _Linux'ta tüm ortam değişkenlerini gösterir._<br/>
+>>  - `echo $JAVA_HOME` _Linux'ta isme göre ortam değişkenlenini gösterir._<br/>
+>>  - `export test="JAVA DEV"` _Linux'ta yeni bir ortam değişkenlenini oluşturur._<br/>
+>>  - `docker container run --env USER=MUHAMMED <CONTAINER_ID>` _Containera yeni bir ortam değişkeni ekler._<br/>
+>>  - `docker container run --env TEMP <CONTAINER_ID>` _Bulunduğu makina üzerinde ki ortam değişkenini containera ortam değişkeni olarak ekler._<br/>
+>>  - `docker container run --env-file .\env-list.txt <CONTAINER_ID>` _Dosya içerisinde bulunan değerleri containera ortam değişkeni olarak ekler._<br/>
 </details>
