@@ -2,85 +2,121 @@
 <details>
   <summary>Container 101</summary>
 
-> >>- **Docker CLI**<br/>
->>  - `docker` _Docker üzerinde kullanabileceğimiz tüm komutları listeler._<br/>
->>  - `docker info` _Docker hakkında genel bilgileri verir._<br/>
->>  - `docker container --help` _Docker container komutu ile birlikte kullanabileceğim komutları listeler._<br/>
->>  - `docker image --help` _Docker image komutu ile birlikte kullanabileceğim komutları listeler._<br/>
->>  - `docker image rm --help` _Docker image rm komutu ile birlikte kullanabileceğim komutları listeler._<br/>
+> >- **Docker CLI**<br/>
+>  - `docker` _Docker üzerinde kullanabileceğimiz tüm komutları listeler._<br/><br/>
+>  - `docker info` _Docker hakkında genel bilgileri verir._<br/><br/>
+>  - `docker container --help` _Docker container komutu ile birlikte kullanabileceğim komutları listeler._<br/><br/>
+>  - `docker image --help` _Docker image komutu ile birlikte kullanabileceğim komutları listeler._<br/><br/>
+>  - `docker image rm --help` _Docker image rm komutu ile birlikte kullanabileceğim komutları listeler._<br/>
 
-> >>- **Container Temelleri**<br/>
->>  - `docker container run --name new_app1 mtopgul/app1` _Docker container oluştur ve çalıştır._<br/>
->>  - `docker run -p 8085:8085 --name web_app mtopgul/web-app1` _Docker container oluştur ve çalıştır._<br/>
->>  - `docker run -d -p 8085:8085 --name web_app mtopgul/web-app1` _Docker container oluştur ve arka planda çalıştır._<br/>
->>  - `docker run --rm mtopgul/web-app1` _Docker container oluştur, çalıştırır ve container durduğunda containeri siler._<br/>
->>  - `docker container ls -a` _Docker container oluştur ve çalıştır._<br/>
->>  - `docker logs <CONTAINER_ID, CONTAINER_NAME> -f` _Container loglarını gösterir._<br/>
->>  - `docker start <CONTAINER_ID, CONTAINER_NAME> -f` _Container'ı çalıştırır._<br/>
->>  - `docker stop <CONTAINER_ID, CONTAINER_NAME> -f` _Container'ı durdurur._<br/>
->>  - `docker container rm <CONTAINER_ID> <CONTAINER_ID> ... -f` _Containerları siler._<br/>
->>  - `docker rmi <CONTAINER_ID> <CONTAINER_ID> ... -f` _Containerları siler._<br/>
->>  - `docker container prune` _Çalışmayan tüm containerleri siler._<br/>
->>  - `docker image prune -a` _Tüm imageları siler._<br/>
->>  - `docker exec -it <CONTAINER_NAME, CONTAINER_ID> sh` _Continer içerisinde komut satırı açar._<br/>
+> >- **Container Temelleri**<br/>
+>  - `docker container run --name new_app1 mtopgul/app1` _Docker container oluştur ve çalıştır._<br/><br/>
+>  - `docker run -p 8085:8085 --name web_app mtopgul/web-app1` _Docker container oluştur ve çalıştır._<br/><br/>
+>  - `docker run -d -p 8085:8085 --name web_app mtopgul/web-app1` _Docker container oluştur ve arka planda çalıştır._<br/><br/>
+>  - `docker run --rm mtopgul/web-app1` _Docker container oluştur, çalıştırır ve container durduğunda containeri siler._<br/><br/>
+>  - `docker container ls -a` _Docker container oluştur ve çalıştır._<br/><br/>
+>  - `docker logs <CONTAINER_ID, CONTAINER_NAME> -f` _Container loglarını gösterir._<br/><br/>
+>  - `docker start <CONTAINER_ID, CONTAINER_NAME> -f` _Container'ı çalıştırır._<br/><br/>
+>  - `docker stop <CONTAINER_ID, CONTAINER_NAME> -f` _Container'ı durdurur._<br/><br/>
+>  - `docker container rm <CONTAINER_ID> <CONTAINER_ID> ... -f` _Containerları siler._<br/><br/>
+>  - `docker rmi <CONTAINER_ID> <CONTAINER_ID> ... -f` _Containerları siler._<br/><br/>
+>  - `docker container prune` _Çalışmayan tüm containerleri siler._<br/><br/>
+>  - `docker image prune -a` _Tüm imageları siler._<br/><br/>
+>  - `docker exec -it <CONTAINER_NAME, CONTAINER_ID> sh` _Continer içerisinde komut satırı açar._<br/><br/>
 
-> >>- **Docker Volume**<br/>
->>  - `docker volume ls` _Volumeleri listeler._<br/>
->>  - `docker volume rm <VOLUME_NAME>` _Volumeu siler._<br/>
->>  - `docker volume prune` _Kullanılmayan volumeleri siler._<br/>
->>  - `docker volume create <VOLUME_NAME>` _Volumeleri oluşturur._<br/>
->>  - `docker volume inspect <VOLUME_NAME>` _Volume detaylarını gösteririr._<br/>
->>  - `docker run -v <VOLUME_NAME>:/<NEW_FILE> -p 8085:8085 --name web_app mtopgul/web-app1` _Image oluşturur ve volume ile bağlar._<br/>
->>  - `docker run -v <VOLUME_NAME>:/<NEW_FILE>:ro -p 8085:8085 --name web_app mtopgul/web-app1` _Image oluşturur ve volume ile bağlar. Burda volume sadece READ ONLY'dir yazma işlemi yapılamaz._<br/>
+> >- **Docker Volume**<br/>
+>  - `docker volume ls` _Volumeleri listeler._<br/><br/>
+>  - `docker volume rm <VOLUME_NAME>` _Volumeu siler._<br/><br/>
+>  - `docker volume prune` _Kullanılmayan volumeleri siler._<br/><br/>
+>  - `docker volume create <VOLUME_NAME>` _Volumeleri oluşturur._<br/><br/>
+>  - `docker volume inspect <VOLUME_NAME>` _Volume detaylarını gösteririr._<br/><br/>
+>  - `docker run -v <VOLUME_NAME>:/<NEW_FILE> -p 8085:8085 --name web_app mtopgul/web-app1` _Image oluşturur ve volume ile bağlar._<br/><br/>
+>  - `docker run -v <VOLUME_NAME>:/<NEW_FILE>:ro -p 8085:8085 --name web_app mtopgul/web-app1` _Image oluşturur ve volume ile bağlar. Burda volume sadece READ ONLY'dir yazma işlemi yapılamaz._<br/><br/>
 
-> >>- **Bind Mounts**<br/>
->>  - `docker container run -d -p 80:80 -v C:\docker-staff\container101\website:/usr/share/nginx/html --name my_web nginx` _Bind Mounts._<br/>
->>     _<br/>Bilgisayarım üzerinde bulunan bir dizini doğrudan docker üzerinde gösterebiliyorum. 
-        Docker doğrudan bu dosyayı okur. Bilgisayar üzerinde yapılan değişiklikler docker'ı da etkiler._
+> >- **Bind Mounts**<br/>
+>  - `docker container run -d -p 80:80 -v C:\docker-staff\container101\website:/usr/share/nginx/html --name my_web nginx` _Bind Mounts._
 </details>
 
 <details>
   <summary>Container 102</summary>
 
-> >>- **Network**<br/>
->>  - `CTRL + PQ` _Container ile konsol bağlantısını keser ama containeri kapatmaz._<br/>
->>  - `dokcer network ls` _Networkleri listeler._<br/>
->>  - `dokcer network inspect <NETWORK_NAME>` _Network detaylarını gösterir._<br/>
->>  - `docker container run -d -p 8080:8080 --net host --name <CONTAINER_NAME> <IMAGE_NAME>` _Conteineri host networküne bağlar._<br/>
->>  - `docker network create <NETWORK_NAME> --driver bridge` _Yeni bir network oluşturur._<br/>
->>  - `docker network create <NETWORK_NAME> --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10` _Özelleştirilmiş bağlantı ayarlı bir network oluşturur._<br/>
->>  - `docker network connect <NETWORK_NAME> <CONTAINER_ID>` _Containeri yeni bir networke bağlar._<br/>
->>  - `docker network disconnect <NETWORK_NAME> <CONTAINER_ID>` _Containeri networkten çıkarır._<br/>
->>  - `docker network rm <NETWORK_NAME>` _Networkü siler._<br/>
+> >- **Network**<br/>
+>  - `CTRL + PQ` _Container ile konsol bağlantısını keser ama containeri kapatmaz._<br/><br/>
+>  - `dokcer network ls` _Networkleri listeler._<br/><br/>
+>  - `dokcer network inspect <NETWORK_NAME>` _Network detaylarını gösterir._<br/><br/>
+>  - `docker container run -d -p 8080:8080 --net host --name <CONTAINER_NAME> <IMAGE_NAME>` _Conteineri host networküne bağlar._<br/><br/>
+>  - `docker network create <NETWORK_NAME> --driver bridge` _Yeni bir network oluşturur._<br/><br/>
+>  - `docker network create <NETWORK_NAME> --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10` _Özelleştirilmiş bağlantı ayarlı bir network oluşturur._<br/><br/>
+>  - `docker network connect <NETWORK_NAME> <CONTAINER_ID>` _Containeri yeni bir networke bağlar._<br/><br/>
+>  - `docker network disconnect <NETWORK_NAME> <CONTAINER_ID>` _Containeri networkten çıkarır._<br/><br/>
+>  - `docker network rm <NETWORK_NAME>` _Networkü siler._<br/><br/>
 
-> >>- **Logging**<br/>
->>  - `docker logs <CONTAINER_ID>` _Container loglarını gösterir._<br/>
->>  - `docker logs <CONTAINER_ID> -f` _Container loglarını gösterir ve konsolu canlı olarak takip et._<br/>
->>  - `docker logs <CONTAINER_ID> --since 5m` _Container loglarını (Son 5 dk) gösterir._<br/>
->>  - `docker logs <CONTAINER_ID> --until 5m` _Container loglarını (Son 5 dk hariç) gösterir._<br/>
->>  - `docker logs <CONTAINER_ID> -t` _Container loglarını başında oluşturulduğu tarih ile birlikte gösterir._<br/>
->>  - `docker logs <CONTAINER_ID> --tail 2` _Son 2 satır container logunu gösterir._<br/>
+> >- **Logging**<br/>
+>  - `docker logs <CONTAINER_ID>` _Container loglarını gösterir._<br/><br/>
+>  - `docker logs <CONTAINER_ID> -f` _Container loglarını gösterir ve konsolu canlı olarak takip et._<br/><br/>
+>  - `docker logs <CONTAINER_ID> --since 5m` _Container loglarını (Son 5 dk) gösterir._<br/><br/>
+>  - `docker logs <CONTAINER_ID> --until 5m` _Container loglarını (Son 5 dk hariç) gösterir._<br/><br/>
+>  - `docker logs <CONTAINER_ID> -t` _Container loglarını başında oluşturulduğu tarih ile birlikte gösterir._<br/><br/>
+>  - `docker logs <CONTAINER_ID> --tail 2` _Son 2 satır container logunu gösterir._<br/><br/>
 
-> >>- **Stats and Top**<br/>
->>  - `docker top <CONTAINER_ID>` _Container PID, TIME, CMD gibi verilerini gösterir._<br/>
->>  - `docker stats` _Tüm containerın hafıza kullanım bilgilerini gösterir._<br/>
->>  - `docker stats <CONTAINER_ID>` _Containerların hafıza kullanım bilgilerini gösterir._<br/>
+> >- **Stats and Top**<br/>
+>  - `docker top <CONTAINER_ID>` _Container PID, TIME, CMD gibi verilerini gösterir._<br/><br/>
+>  - `docker stats` _Tüm containerın hafıza kullanım bilgilerini gösterir._<br/><br/>
+>  - `docker stats <CONTAINER_ID>` _Containerların hafıza kullanım bilgilerini gösterir._<br/><br/>
 
-> >>- **CPU and Memory Limits**<br/>
->>  - `docker container run -d -p 8080:8080 --name w001 --memory=100m <IMAGE_NAME>` _Containera maximum memory limiti atar._<br/>
->>  - `docker container run -d -p 8080:8080 --name w001 --memory=100m --memory-swap=200m <IMAGE_NAME>` _Containera maximum 
-      memory limiti ve swap alanı atar. Böylece eğer containerin memorysi dolsa bile çökmez, swap alanını kullanabilir._<br/>
->>  - `docker container run -d -p 8080:8080 --name w01 --cpus="1.5" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden sadece 1.5 tanesini kullanabileceğini belirtir._<br/>
->>  - `docker container run -d -p 8080:8080 --name w01 --cpuset-cpus="0,3" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden 0. ve 3. numaralı çekirdekleri kullanabileceğini belirtir._<br/>
+> >- **CPU and Memory Limits**<br/>
+>  - `docker container run -d -p 8080:8080 --name w001 --memory=100m <IMAGE_NAME>` _Containera maximum memory limiti atar._<br/><br/>
+>  - `docker container run -d -p 8080:8080 --name w001 --memory=100m --memory-swap=200m <IMAGE_NAME>` _Containera maximum 
+      memory limiti ve swap alanı atar. Böylece eğer containerin memorysi dolsa bile çökmez, swap alanını kullanabilir._<br/><br/>
+>  - `docker container run -d -p 8080:8080 --name w01 --cpus="1.5" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden sadece 1.5 tanesini kullanabileceğini belirtir._<br/><br/>
+>  - `docker container run -d -p 8080:8080 --name w01 --cpuset-cpus="0,3" <IMAGE_NAME>` _Bilgisayar içinde bulunan çekirdeklerden 0. ve 3. numaralı çekirdekleri kullanabileceğini belirtir._<br/><br/>
 
-> >>- **Environment Variables**<br/>
->>  - `Get-ChildItem Env:` _Windows'ta tüm ortam değişkenlerini gösterir._<br/>
->>  - `$Env:JAVA_HOME` _Windows'ta isme göre ortam değişkenlenini gösterir._<br/>
->>  - `$Env:test="JAVA DEV"` _Windows'ta yeni bir ortam değişkenlenini oluşturur._<br/>
->>  - `printenv` _Linux'ta tüm ortam değişkenlerini gösterir._<br/>
->>  - `echo $JAVA_HOME` _Linux'ta isme göre ortam değişkenlenini gösterir._<br/>
->>  - `export test="JAVA DEV"` _Linux'ta yeni bir ortam değişkenlenini oluşturur._<br/>
->>  - `docker container run --env USER=MUHAMMED <CONTAINER_ID>` _Containera yeni bir ortam değişkeni ekler._<br/>
->>  - `docker container run --env TEMP <CONTAINER_ID>` _Bulunduğu makina üzerinde ki ortam değişkenini containera ortam değişkeni olarak ekler._<br/>
->>  - `docker container run --env-file .\env-list.txt <CONTAINER_ID>` _Dosya içerisinde bulunan değerleri containera ortam değişkeni olarak ekler._<br/>
+> >- **Environment Variables**<br/>
+>  - `Get-ChildItem Env:` _Windows'ta tüm ortam değişkenlerini gösterir._<br/><br/>
+>  - `$Env:JAVA_HOME` _Windows'ta isme göre ortam değişkenlenini gösterir._<br/><br/>
+>  - `$Env:test="JAVA DEV"` _Windows'ta yeni bir ortam değişkenlenini oluşturur._<br/><br/>
+>  - `printenv` _Linux'ta tüm ortam değişkenlerini gösterir._<br/><br/>
+>  - `echo $JAVA_HOME` _Linux'ta isme göre ortam değişkenlenini gösterir._<br/><br/>
+>  - `export test="JAVA DEV"` _Linux'ta yeni bir ortam değişkenlenini oluşturur._<br/><br/>
+>  - `docker container run --env USER=MUHAMMED <CONTAINER_ID>` _Containera yeni bir ortam değişkeni ekler._<br/><br/>
+>  - `docker container run --env TEMP <CONTAINER_ID>` _Bulunduğu makina üzerinde ki ortam değişkenini containera ortam değişkeni olarak ekler._<br/><br/>
+>  - `docker container run --env-file .\env-list.txt <CONTAINER_ID>` _Dosya içerisinde bulunan değerleri containera ortam değişkeni olarak ekler._<br/><br/>
+
+</details>
+
+
+<details>
+  <summary>Image</summary>
+
+> >- **Dockerfile**<br/> 
+> - `FROM` Oluşturulacak imajın hangi imajdan oluşturulacağını belirten talimat. Dockerfile içerisinde geçmesi mecburi tek talimat budur. Mutlaka olmalıdır.
+>  <br/>`Ör`: FROM ubuntu:18.04<br/><br/>
+> - `LABEL` İmaj metadata’sına key=value şeklinde değer çiftleri eklemek için kullanılır. Örneğin team=development şeklinde bir etiket eklenerek bu imajın development ekibinin kullanması için yaratıldığı belirtilebilir.
+> <br/>`Ör`: LABEL version:1.0.8<br/><br/>
+> - `RUN` İmaj oluşturulurken shell’de bir komut çalıştırmak istersek bu talimat kullanılır. Örneğin apt-get install xxx ile xxx isimli uygulamanın bu imaja yüklenmesi sağlanabilir.
+> <br/>`Ör`: RUN apt-get update<br/><br/>
+> - `WORKDIR` cd xxx komutuyla ile istediğimiz klasöre geçmek yerine bu talimat kullanılarak istediğimiz klasöre geçer ve oradan çalışmaya devam ederiz.
+> <br/>`Ör`: WORKDIR /usr/src/app<br/><br/>
+> - `USER` gireceğimiz komutları hangi kullanıcı ile çalıştırmasını istiyorsak bu talimat ile onu seçebiliriz.
+> <br/>`Ör`: USER poweruser<br/><br/>
+> - `COPY` İmaj içine dosya veya klasör kopyalamak için kullanırız
+> <br/>`Ör`: COPY /source /user/src/app<br/><br/>
+> - `ADD` COPY ile aynı işi yapar yani dosya ya da klasör kopyalarsınız. Fakat ADD bunun yanında dosya kaynağının bir url olmasına da izin verir. Ayrıca ADD ile kaynak olarak bir .tar dosyası belirtilirse bu dosya imaja .tar olarak sıkıştırılmış haliyle değil de açılarak kopyalanır.
+> <br/>`Ör`: ADD https://wordpress.org/latest.tar.gz /temp<br/><br/>
+> - `ENV` Imaj içinde environment variable tanımlamak için kullanılır
+> <br/>`Ör`: ENV TEMP_FOLDER="/temp"<br/><br/>
+> - `ARG` ARG ile de variable tanımlarsınız. Fakat bu variable sadece imaj oluşturulurken yani build aşamasında kullanılır. Imajın oluşturulmuş halinde bu variable bulunmaz. ENV ile imaj oluşturulduktan sonra da imaj içinde olmasını istediğiniz variable tanımlarsınız, ARG ile sadece oluştururken kullanmanız gereken variable tanımlarsınız.
+> <br/>`Ör`: ARG VERSION:1.0<br/><br/>
+> - `VOLUME` Imaj içerisinde volume tanımlanamızı sağlayan talimat. Eğer bu volume host sistemde varsa container bunu kullanır. Yoksa yeni volume oluşturur.
+> <br/>`Ör`: VOLUME /myvol<br/><br/>
+> - `EXPOSE` Bu imajdan oluşturulacak containerların hangi portlar üstünden erişilebileceğini yani hangi portların yayınlanacağını bu talimatla belirtirsiniz.
+> <br/>`Ör`: EXPOSE 80/tcp<br/><br/>
+> - `ENTRYPOINT` Bu talimat ile bir containerın çalıştırılabilir bir uygulama gibi ayarlanabilmesini sağlarsınız.
+> <br/>`Ör`: ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]<br/><br/>
+> - `CMD` Bu imajdan container yaratıldığı zaman varsayılan olarak çalıştırmasını istediğiniz komutu bu talimat ile belirlersiniz.
+> <br/>`Ör`: CMD java merhaba<br/><br/>
+> - `HEALTHCHECK` Bu talimat ile Docker'a bir konteynerin hala çalışıp çalışmadığını kontrol etmesini söylebiliriz. Docker varsayılan olarak container içerisinde çalışan ilk processi izler ve o çalıştığı sürece container çalışmaya devam eder. Fakat process çalışsa bile onun düzgün işlem yapıp yapmadığına bakmaz. HEALTHCHECK ile buna bakabilme imkanına kavuşuruz.
+> <br/>`Ör`: HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost/ || exit 1<br/><br/>
+> - `SHELL` Dockerfile'ın komutları işleyeceği shell'in hangisi olduğunu belirtiriz. Linux için varsayılan shell ["/bin/sh", "-c"],Windows için ["cmd", "/S", "/C"]. Bunları SHELL talimatı ile değiştirebiliriz.
+> <br/>`Ör`: SHELL ["powershell", "-command"]<br/><br/>
 </details>
