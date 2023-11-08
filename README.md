@@ -138,4 +138,11 @@
 > - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, Docker `CMD` içinde olan parametreleri `ENTRYPOINT`'e parametre olarak geçer ve `ENTRYPOINT`'i çalıştırır._<br/><br/>
 > - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, `ENTRYPOINT`'e parametre geçme imkanı sağlanmış olur._<br/><br/>
 >  - `docker container run <CONTAINER_NAME> 8.8.8.8`
+>
+> >- **EXEC vs SHELL**<br/>
+> - `Exec Form` _ile ortam değişkenlerine **erişemeyiz**._
+>  - `Ör`: `CMD ["echo", "$MSG"]`<br/><br/>
+> - `Shell Form` _ile ortam değişkenlerine **erişebiliriz**._
+>  - `Ör`: `CMD echo $MSG`<br/><br/>
+> - `ENTRYPOINT` ve `CMD` _komutlarını beraber kullanacaksak mutlaka **exec form** kullanılmalıdır._<br/><br/>
 </details>
