@@ -1,16 +1,18 @@
-FROM ubuntu:18.04
+#Start with a base image containing Java runtime
+FROM openjdk:17-jdk-slim as build
 
-# Ubuntu'yu güncelle
-RUN apt-get update -y
+#Information around who maintains the image
+MAINTAINER mtopgul
 
-# Java'yı indir
-RUN apt-get install openjdk-17-jre -y
+# cd to app directory
+WORKDIR /app
 
-# merhaba isimli klasöre geç yoksa da oluştur. Bundan sonra bu klasörde çalış.
-WORKDIR /merhaba
+# Add the application's jar to the container
+COPY target/web-app1.jar .
 
-# Jar dosyasını merhaba klasörüne kopyala
-COPY /target/web-app1.jar .
+# Expose port
+EXPOSE 8080
 
-# Container başlatıldığında Java uygulamasının da başlamasını sağla
-CMD ["java", "-jar", "web-app1.jar", "com.mtopgul.WebApp1Application"]
+#execute the application
+#ENTRYPOINT ["java","-jar","/web-app1.jar"]
+CMD java -jar web-app1.jar
