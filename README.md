@@ -122,12 +122,20 @@
 >>  - `Ör`: HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost/ || exit 1<br/><br/>
 >> - `SHELL` Dockerfile'ın komutları işleyeceği shell'in hangisi olduğunu belirtiriz. Linux için varsayılan shell ["/bin/sh", "-c"],Windows için ["cmd", "/S", "/C"]. Bunları SHELL talimatı ile değiştirebiliriz.
 >>  - `Ör`: SHELL ["powershell", "-command"]<br/><br/>
-
+>
 > >- **Add vs Copy**<br/>
 > - `COPY` _ile sadece mevcut bir dosyayı image içine atabiliriz._<br/><br/>
 > - `COPY` _ile eğer sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı açmadan atar._<br/><br/>
 > - `ADD` _ile mevcut dosyaları ve urlden alınan dosyaları image içine atabiliriz._<br/><br/>
 > - `ADD` _ile eğer sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı açarak atar._<br/><br/>
 > - `ADD` _ile urlden sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı **açmadan** atar._<br/><br/>
-
+> 
+> >- **ENTRYPOINT vs CMD**<br/>
+> - `CMD` _ile `ENTRYPOINT` neredeyse aynıdır. Fakat `CMD` ile girilen komutu `docker container run` esnasında ezebilirim ._<br/><br/>
+>  - `Ör`: `docker container run <CONTAINER_NAME>` komutu ile Dockerfile'da yazılı olan `CMD` komutu çalışır. Fakat `docker container run <CONTAINER_NAME> ls` 
+      komutu ile container içinde bulunan dosyayı listeler.
+> - `ENTRYPOINT` _Çalışma zamanında değiştirilemez._<br/><br/>
+> - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, Docker `CMD` içinde olan parametreleri `ENTRYPOINT`'e parametre olarak geçer ve `ENTRYPOINT`'i çalıştırır._<br/><br/>
+> - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, `ENTRYPOINT`'e parametre geçme imkanı sağlanmış olur._<br/><br/>
+>  - `docker container run <CONTAINER_NAME> 8.8.8.8`
 </details>
