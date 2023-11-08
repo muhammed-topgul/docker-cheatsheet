@@ -122,4 +122,12 @@
 >>  - `Ör`: HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost/ || exit 1<br/><br/>
 >> - `SHELL` Dockerfile'ın komutları işleyeceği shell'in hangisi olduğunu belirtiriz. Linux için varsayılan shell ["/bin/sh", "-c"],Windows için ["cmd", "/S", "/C"]. Bunları SHELL talimatı ile değiştirebiliriz.
 >>  - `Ör`: SHELL ["powershell", "-command"]<br/><br/>
+
+> >- **Add vs Copy**<br/>
+> - `COPY` _ile sadece mevcut bir dosyayı image içine atabiliriz._<br/><br/>
+> - `COPY` _ile eğer sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı açmadan atar._<br/><br/>
+> - `ADD` _ile mevcut dosyaları ve urlden alınan dosyaları image içine atabiliriz._<br/><br/>
+> - `ADD` _ile eğer sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı açarak atar._<br/><br/>
+> - `ADD` _ile urlden sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı **açmadan** atar._<br/><br/>
+
 </details>
