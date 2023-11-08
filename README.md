@@ -145,4 +145,7 @@
 > - `Shell Form` _ile ortam değişkenlerine **erişebiliriz**._
 >  - `Ör`: `CMD echo $MSG`<br/><br/>
 > - `ENTRYPOINT` ve `CMD` _komutlarını beraber kullanacaksak mutlaka **exec form** kullanılmalıdır._<br/><br/>
+>
+> >- **Multi Stage Build**<br/>
+> - `docker cp <CONTAINER_NAME>:/usr/src/uygulama .` _container içinde bilgisayara dosya kopyalar._
 </details>
