@@ -7,7 +7,8 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - verilerim:/var/lib/postgresql/data
+#      - ~/mtopgul/psql:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
@@ -15,13 +16,13 @@ services:
       - mnet
 
   server:
-    depends_on:
-      - postgres
     image: mtopgul/server
     container_name: server-app
+    depends_on:
+      - postgres
     environment:
-#      DB_HOST: psql
-      DB_HOST: 172.21.0.1
+      DB_HOST: psql
+#      DB_HOST: 172.21.0.1
     ports:
       - "9595:9595"
     restart: always
@@ -29,18 +30,25 @@ services:
       - mnet
 
   client:
+    build:
+      context: ./client
+      tags:
+        - mtopgul/client
+#    image: mtopgul/client
+    container_name: client-app
     depends_on:
       - server
-    image: mtopgul/client
-    container_name: client-app
     environment:
-#      SERVER_URL: server-app
-      SERVER_URL: 172.21.0.1
+      SERVER_URL: server-app
+#      SERVER_URL: 172.21.0.1
     ports:
       - "9090:9090"
     restart: always
     networks:
       - mnet
+
+volumes:
+  verilerim:
 
 networks:
   mnet:
