@@ -131,13 +131,13 @@
 > - `ADD` _ile urlden sıkıştırılmış bir dosya atarsak **tar, zip. vb.** dosyayı **açmadan** atar._<br/><br/>
 > 
 > >- **ENTRYPOINT vs CMD**<br/>
-> - `CMD` _ile `ENTRYPOINT` neredeyse aynıdır. Fakat `CMD` ile girilen komutu `docker container run` esnasında ezebilirim ._<br/><br/>
+> - `CMD` _ile `ENTRYPOINT` neredeyse aynıdır. Fakat `CMD` ile girilen komutu `docker container run` esnasında ezebilirim ._
 >  - `Ör`: `docker container run <CONTAINER_NAME>` komutu ile Dockerfile'da yazılı olan `CMD` komutu çalışır. Fakat `docker container run <CONTAINER_NAME> ls` 
-      komutu ile container içinde bulunan dosyayı listeler.
+      komutu ile container içinde bulunan dosyayı listeler.<br/><br/>
 > - `ENTRYPOINT` _Çalışma zamanında değiştirilemez._<br/><br/>
 > - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, Docker `CMD` içinde olan parametreleri `ENTRYPOINT`'e parametre olarak geçer ve `ENTRYPOINT`'i çalıştırır._<br/><br/>
-> - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, `ENTRYPOINT`'e parametre geçme imkanı sağlanmış olur._<br/><br/>
->  - `docker container run <CONTAINER_NAME> 8.8.8.8`
+> - `ENTRYPOINT` ve `CMD` _Dockerfile içerisinde aynı anda bulunursa, `ENTRYPOINT`'e parametre geçme imkanı sağlanmış olur._
+>  - `docker container run <CONTAINER_NAME> 8.8.8.8`<br/><br/>
 >
 > >- **EXEC vs SHELL**<br/>
 > - `Exec Form` _ile ortam değişkenlerine **erişemeyiz**._
@@ -155,4 +155,11 @@
 > >- **Save & Load**<br/>
 > - `docker save <IMAGE_NAME> -o <FILE_NAME>.tar` _image'ı tar dosyasına çevirir._
 > - `docker load -i <FILE_NAME>.tar` _image'ı tar dosyasından yükler._
+>
+> >- **Docker Registry**<br/>
+> - `docker pull registry` _image'ı DockerHub'dan çeker._
+> - `docker run -d -p 5000:5000 --restart always --name registry registry` _container'i çalıştırır._
+> - `http://localhost:5000/v2/_catalog` _mevcut repositoryleri gösterir._
+> - `docker image tag <IMAGE_NAME>:<TAG> 127.0.0.1:5000/<NEW_IMAGE_NAME>:<TAG>` _mevcut image'ı tag'ler. Mevcut image'ın id'sini kullanır._
+> - `docker image push 127.0.0.1:5000/<NEW_IMAGE_NAME>:<TAG>` _image'i local repository'e gönderir._
 </details>
