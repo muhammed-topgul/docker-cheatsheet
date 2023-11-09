@@ -163,3 +163,11 @@
 > - `docker image tag <IMAGE_NAME>:<TAG> 127.0.0.1:5000/<NEW_IMAGE_NAME>:<TAG>` _mevcut image'ı tag'ler. Mevcut image'ın id'sini kullanır._
 > - `docker image push 127.0.0.1:5000/<NEW_IMAGE_NAME>:<TAG>` _image'i local repository'e gönderir._
 </details>
+
+<details>
+  <summary>Compose and Swarm</summary>
+
+> >- **Compose**<br/>
+> - `docker-compose up` _docker-compose.yaml dosyasını ayağa kaldırır._
+> - `docker-compose down` _docker-compose.yaml dosyasında bulunan herşeyi durudurur ve siler._
+</details>
