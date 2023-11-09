@@ -148,4 +148,8 @@
 >
 > >- **Multi Stage Build**<br/>
 > - `docker cp <CONTAINER_NAME>:/usr/src/uygulama .` _container içinde bilgisayara dosya kopyalar._
+>
+> >- **Build ARG**<br/>
+> - `docker image build -t <IMAGE_NAME> --build-arg VERSION=3.7.1 .` _ile docker ile image oluşturulma esnasında parametre geçilir._
+
 </details>
