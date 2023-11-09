@@ -151,5 +151,8 @@
 >
 > >- **Build ARG**<br/>
 > - `docker image build -t <IMAGE_NAME> --build-arg VERSION=3.7.1 .` _ile docker ile image oluşturulma esnasında parametre geçilir._
-
+>
+> >- **Save & Load**<br/>
+> - `docker save <IMAGE_NAME> -o <FILE_NAME>.tar` _image'ı tar dosyasına çevirir._
+> - `docker load -i <FILE_NAME>.tar` _image'ı tar dosyasından yükler._
 </details>
